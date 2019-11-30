@@ -15,6 +15,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: SafeArea(
         child: Container(
+          color: Colors.white,
             child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -22,9 +23,10 @@ class _LoginPageState extends State<LoginPage> {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      CircleAvatar(
-                        backgroundImage: AssetImage('images/user.jpg'),
-                        radius: 50,
+                      Container(
+                        height: 100,
+                        width: 100,
+                        child: Image(image: AssetImage('images/appicon.png')),
                       ),
                       Padding(padding: EdgeInsets.all(5),),
                       SizedBox(

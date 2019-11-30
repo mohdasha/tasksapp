@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tasksapp/home_page.dart';
+import 'package:tasksapp/AboutPage.dart';
+import 'package:tasksapp/NotificationSetting.dart';
+import 'package:tasksapp/ProfileSetting.dart';
 import 'package:tasksapp/login_page.dart';
 import 'signin.dart';
 
@@ -23,24 +25,126 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
-      body: Column(
+      body: ListView(
         children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Padding( padding: EdgeInsets.only(top: 20),child: CircleAvatar(backgroundImage: NetworkImage(imageUrl), radius: 50,))
-            ],
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.fill,
+                image: AssetImage('images/olivier-guillard-aSmxd4neejM-unsplash.jpg')
+              )
+            ),
+            height: 250,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+//                  Row(
+//                    mainAxisAlignment: MainAxisAlignment.end,
+//                    children: <Widget>[
+//                      IconButton(icon: Icon(Icons.settings, color: Colors.white,))
+//                    ],
+//                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      CircleAvatar(
+                        backgroundImage: AssetImage('images/user.jpg'),
+                        radius: 50,
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              name,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 24,
+                                  color: Colors.white
+                              ),
+                            ),
+                            Text(
+                              email,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                  color: Colors.white
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Padding(padding: EdgeInsets.only(top: 20),),
-              Text(name, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)
-            ],
+          Container(
+            color: Colors.white,
+            child: Column(
+              children: <Widget>[
+                ListTile(
+                  title: Text('Profile Settings'),
+                  subtitle: Text('Change profile settings'),
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) => ProfileSetting()
+                    ));
+                  },
+                ),
+                Divider(),
+                ListTile(
+                  title: Text('Notification Preferences'),
+                  subtitle: Text('Change notifications settings'),
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context) => NotificationSetting()
+                    ));
+                  },
+                ),
+                Divider(),
+                ListTile(
+                  title: Text('About'),
+                  subtitle: Text('Read about us'),
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context) => AboutPage()));
+                  },
+                ),
+                Divider(),
+              ],
+            ),
+          ),
+          Container(
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  OutlineButton(
+                    shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)
+                    ),
+                    child: Text(
+                      'Logout',
+                      style: TextStyle(
+                      fontSize: 14
+                      ),
+                    ),
+                    onPressed: () => {
+                      Navigator.push(context, MaterialPageRoute(
+                      builder: (context) => LoginPage()))
+                    },
+                  ),
+                ]
+            )
           )
-        ],
-      ),
+        ]
+      )
     );
   }
 
