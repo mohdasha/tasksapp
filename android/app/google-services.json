@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1033214168242",
+    "firebase_url": "https://tasksapp-36d83.firebaseio.com",
+    "project_id": "tasksapp-36d83",
+    "storage_bucket": "tasksapp-36d83.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1033214168242:android:2c095e7ff829ed67b3cdab",
+        "android_client_info": {
+          "package_name": "com.geeksbiz.tasksapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1033214168242-t3lvtli900qt81g0cn683irn2subk83n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.geeksbiz.tasksapp",
+            "certificate_hash": "70b4d2688ef7f2cca451402c5ede7431277a2a3e"
+          }
+        },
+        {
+          "client_id": "1033214168242-qkm79qs0rirslfdcfp9gm9m4v57e57id.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbR4dRyP_8dzvREuZ1WBi11OEjl3w0Eg4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1033214168242-qkm79qs0rirslfdcfp9gm9m4v57e57id.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
