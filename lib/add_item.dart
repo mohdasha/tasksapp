@@ -12,12 +12,11 @@ class AddItem extends StatefulWidget {
 class _AddItemState extends State<AddItem> {
 
   Color _accentColor = Colors.blue[50];
-
+  String taskTitle;
   DateTime _selectedDateTime = DateTime.now();
   DateFormat _dateFormat = new DateFormat('EEE, MMM d');
   @override
   Widget build(BuildContext context) {
-    print('Inside');
     return Scaffold(
       appBar: AppBar(
         title: Text('Add Task', style: TextStyle(color: Colors.black),),
@@ -33,7 +32,7 @@ class _AddItemState extends State<AddItem> {
                   borderRadius: BorderRadius.circular(15)
                 ),
               onPressed: () {
-
+                Navigator.pop(context);
               },
             ),
           )
@@ -66,6 +65,11 @@ class _AddItemState extends State<AddItem> {
                 border: OutlineInputBorder(borderSide: BorderSide.none),
                 disabledBorder: OutlineInputBorder(borderSide: BorderSide.none)
               ),
+              onChanged: (context) {
+                setState(() {
+                  taskTitle = context.toString();
+                });
+              },
             )
           ),
           Divider(color: _accentColor, thickness: 3,),
